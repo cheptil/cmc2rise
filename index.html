@@ -1,1 +1,156 @@
-hello cmc2rise
+<!DOCTYPE HTML>
+<html>
+ <head>
+     <meta charset="utf-8">
+  </head>
+ <body >
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(55470124, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/55470124" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+	<script
+	  src="https://code.jquery.com/jquery-3.3.1.min.js"
+	  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	  crossorigin="anonymous">
+	</script>
+
+	<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"></link>
+
+	<table id="example" class="display" style="width:100%">
+        
+        
+        <thead>            
+            <tr>
+                <th colspan="16">Рейтинг кафедр 2014-2022, построенный по результатам распределения по кафедрам в соответствующие годы</th>
+            </tr>
+            <tr>
+                <th colspan="1"></th>
+                <th colspan="1">Год</th>
+                <th colspan="2">2014</th>
+                <th colspan="2">2017</th>
+                <th colspan="2">2018</th>
+                <th colspan="2">2019</th>
+                <th colspan="2">2020</th>
+                <th colspan="2">2021</th>
+                <th colspan="2">2022</th>                
+            </tr>
+            <tr>
+                <th colspan="2">Общий средний балл</th>
+                <th colspan="2">3.86</th>
+                <th colspan="2">3.91</th>
+                <th colspan="2">3.92</th>
+                <th colspan="2">3.95</th>
+                <th colspan="2">4.11</th>
+                <th colspan="2">4.16</th>
+                <th colspan="2">4.12</th>                
+            </tr>
+            <tr>
+                <th>#</th>
+                <th>Кафедра</th>
+                <th>Средний балл</th>
+                <th>Место в рейтинге</th>
+                <th>Средний балл</th>
+                <th>Место в рейтинге</th>
+                <th>Средний балл</th>
+                <th>Место в рейтинге</th>
+                <th>Средний балл</th>
+                <th>Место в рейтинге</th>
+                <th>Средний балл</th>
+                <th>Место в рейтинге</th>
+                <th>Средний балл</th>
+                <th>Место в рейтинге</th>
+                <th>Средний балл</th>
+                <th>Место в рейтинге</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>#</th>
+                <th>Кафедра</th>
+                <th>Средний балл</th>
+                <th>Место в рейтинге</th>
+                <th>Средний балл</th>
+                <th>Место в рейтинге</th>
+                <th>Средний балл</th>
+                <th>Место в рейтинге</th>
+                <th>Средний балл</th>
+                <th>Место в рейтинге</th>
+                <th>Средний балл</th>
+                <th>Место в рейтинге</th>
+                <th>Средний балл</th>
+                <th>Место в рейтинге</th>
+                <th>Средний балл</th>
+                <th>Место в рейтинге</th>
+            </tr>
+            <tr>
+                <th colspan="1"></th>
+                <th colspan="1">Год</th>
+                <th colspan="14">Источник</th>               
+            </tr>
+            <tr>
+                <th colspan="1"></th>
+                <th colspan="1">2014</th>
+                <th colspan="14">https://docs.google.com/spreadsheets/d/1Mbjvzefj-Uj1v5nsr_M9yxL7g0N7SBTGxXmpmxrDcD8</th>               
+            </tr>
+            <tr>
+                <th colspan="1"></th>
+                <th colspan="1">2017</th>
+                <th colspan="14">https://docs.google.com/spreadsheets/d/1MzldgTFZvfqF9qLxJOqqa14MUUr4YML2pTJNRnqqF8s</th>               
+            </tr>
+            <tr>
+                <th colspan="1"></th>
+                <th colspan="1">2018</th>
+                <th colspan="14">https://docs.google.com/spreadsheets/d/1TE9mS0k3gF4OVGJ6m8jU-NV8aHzuAUUuEW9Lh0UrAwY</th>               
+            </tr>
+            <tr>
+                <th colspan="1"></th>
+                <th colspan="1">2019</th>
+                <th colspan="14">https://docs.google.com/spreadsheets/d/1XZlhB8bQPdOiDs6RWXolQs88c3Rp_PYQ0NxgLmTekyc</th>               
+            </tr>
+            <tr>
+                <th colspan="1"></th>
+                <th colspan="1">2020-2022</th>
+                <th colspan="14">Учебная часть</th>               
+            </tr>
+        </tfoot>
+    </table>
+
+    <script>
+	
+    $(document).ready(function() {
+    var t = $('#example').DataTable( {
+            "ajax": 'data.txt',
+            "order": [[ 1, "asc" ]],
+            "pageLength": 25,
+            "columnDefs": [
+            { targets: [3, 5, 7, 9, 11, 13, 15], "orderSequence": ["asc", "desc"]},
+            { targets: [2, 4, 6, 8, 10, 12, 14], "orderSequence": ["desc", "asc"]},
+            ]
+    } );
+ 
+    t.on( 'order.dt', function () {
+        t.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
+            cell.innerHTML = i+1;
+        } );
+    } ).draw();
+} );
+
+	</script>
+
+  </body>
+</html>
